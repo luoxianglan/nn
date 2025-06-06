@@ -14,6 +14,7 @@ from tensorflow.keras import layers, optimizers, datasets
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # or any {'0', '1', '2'}
 
 def mnist_dataset():
+     #加载MNIST数据集并进行归一化处理
     (x, y), (x_test, y_test) = datasets.mnist.load_data()
     #normalize
     x = x/255.0
@@ -30,10 +31,12 @@ def mnist_dataset():
 import numpy as np
 
 class Matmul:
+     #矩阵乘法层，实现前向传播和反向传播
     def __init__(self):
         self.mem = {}
         
     def forward(self, x, W):
+         #执行矩阵乘法前向传播
         h = np.matmul(x, W)
         self.mem={'x': x, 'W':W}
         return h
