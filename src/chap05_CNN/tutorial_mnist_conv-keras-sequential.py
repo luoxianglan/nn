@@ -72,7 +72,7 @@ model = keras.Sequential([
     layers.Dense(10, activation='softmax')])  # N*10
 
 optimizer = optimizers.Adam(0.0001)
-
+# 配置优化器（Adam优化算法）
 
 # ## 编译， fit以及evaluate
 
