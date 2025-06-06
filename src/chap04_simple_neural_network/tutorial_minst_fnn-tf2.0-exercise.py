@@ -100,9 +100,9 @@ def train_one_step(model, optimizer, x, y):
 # 使用tf.function装饰器将函数编译为TensorFlow图，提高执行效率
 @tf.function
 def test(model, x, y):
-    logits = model(x)
-    loss = compute_loss(logits, y)
-    accuracy = compute_accuracy(logits, y)
+    logits = model(x)# 模型前向传播
+    loss = compute_loss(logits, y)# 计算损失
+    accuracy = compute_accuracy(logits, y)# 计算准确率
     return loss, accuracy
 
 
