@@ -124,11 +124,11 @@ print('训练集预测值与真实值的标准差：{:.1f}'.format(std))
 
 plt.plot(o_x, o_y, 'ro', markersize=3)
 plt.plot(o_x_test, y_test_preds, 'k')
-plt.xlabel('x')
-plt.ylabel('y')
-plt.title('Linear Regression')
-plt.legend(['train', 'test', 'pred'])
-plt.show()
+plt.xlabel('x') # 设置x轴标签
+plt.ylabel('y')# 设置y轴标签
+plt.title('Linear Regression') # 设置标题
+plt.legend(['train', 'test', 'pred']) # 设置图例
+plt.show()# 显示图表
 
 
 # In[ ]:
