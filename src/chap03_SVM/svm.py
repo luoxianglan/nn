@@ -9,7 +9,9 @@ def load_data(fname):
     载入数据。
     """
     with open(fname, 'r') as f:
+        # 初始化存储数据的列表
         data = []
+        # 读取并跳过标题行
         line = f.readline() # 首行是标题行，自动跳过
         for line in f:
             line = line.strip().split()
