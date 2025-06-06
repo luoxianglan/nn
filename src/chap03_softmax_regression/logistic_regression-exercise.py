@@ -199,6 +199,12 @@ def animate(i):
     return (line_d,) + (C1_dots,) + (C2_dots,)  # 返回需要更新的对象，以便 Matplotlib 动画知道要更新哪些部分
 
 # 创建动画对象 anim，使用 matplotlib.animation.FuncAnimation 函数生成动态动画
+# f: 动画绘制的目标 Figure 对象（需提前创建）
+# animate: 动画更新函数，负责每帧数据的更新和绘制
+# init_func: 初始化函数，用于设置动画初始状态
+# frames: 动画帧数，可以是整数或可迭代对象
+# interval: 帧间隔时间（毫秒），控制动画播放速度
+# blit: 是否使用高效重绘，仅更新变化的部分
 anim = animation.FuncAnimation(f, animate, init_func=init,
                                frames=len(animation_frames), interval=30, blit=True)
 
