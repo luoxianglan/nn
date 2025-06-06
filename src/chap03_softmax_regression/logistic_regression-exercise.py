@@ -203,4 +203,6 @@ anim = animation.FuncAnimation(f, animate, init_func=init,
                                frames=len(animation_frames), interval=30, blit=True)
 
 # 将动画转换为HTML5视频格式并显示
+# to_html5_video() 方法将动画转换为 mp4 视频格式的 HTML 代码
+# HTML() 函数是 IPython.display 中的工具，用于在 Jupyter Notebook 中嵌入 HTML 内容
 HTML(anim.to_html5_video())
