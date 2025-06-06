@@ -60,6 +60,7 @@ def load_data(filename, basis_func=gaussian_basis):
 
 class linearModel(Model):
     def __init__(self, ndim):
+        #简单的线性回归模型
         super(linearModel, self).__init__()
         self.w = tf.Variable(
             shape=[ndim, 1], 
@@ -68,6 +69,7 @@ class linearModel(Model):
         
     @tf.function
     def call(self, x):
+        #模型前向传播计算
         y = tf.squeeze(tf.matmul(x, self.w), axis=1)
         return y
 
