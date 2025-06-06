@@ -15,7 +15,7 @@ matplotlib.use('TkAgg')  # 关键代码，临时指定matplotlib后端代码，�
 
 # 2.建立一个一维数组 a 初始化为[4,5,6]，(1)输出a 的类型（type）(2)输出a的各维度的大小（shape）(3)输出 a的第一个元素（element）
 print("第二题：\n")
-
+# 使用列表直接创建数组
 a = np.array([4, 5, 6])
 print("(1)输出a 的类型（type）\n", type(a))
 print("(2)输出a的各维度的大小（shape）\n", a.shape)
@@ -30,7 +30,7 @@ print("(2)输出 b(0,0)，b(0,1),b(1,1) 这三个元素（对应值分别为4,5,
 # 4.  (1)建立一个全0矩阵 a, 大小为 3x3; 类型为整型（提示: dtype = int）(2)建立一个全1矩阵b,大小为4x5;  (3)建立一个单位矩阵c ,大小为4x4; (4)生成一个随机数矩阵d,
 # 大小为 3x2.
 print("第四题：\n")
-
+# 使用特殊函数创建数组
 a = np.zeros((3, 3), dtype=int)# 全0矩阵，3x3
 b = np.ones((4, 5))                  # 全1矩阵，4x5
 c = np.eye(4)                        # 单位矩阵，4x4
@@ -184,7 +184,7 @@ plt.show() #显示绘制的图像
 
 # 25.画图：画正弦函数和余弦函数， x = np.arange(0, 3 * np.pi, 0.1)(提示：这里用到 np.sin() ，np.cos() 函数和 matplotlib.pyplot 库)
 print("第二十五题：\n")
-
+# 同时绘制正弦和余弦曲线
 x = np.arange(0, 3 * np.pi, 0.1)  ## 生成从0到3π 的x值，步长为0.1
 y_sin = np.sin(x)  # 计算对应的正弦值
 y_cos = np.cos(x)  # 计算对应的余弦值
