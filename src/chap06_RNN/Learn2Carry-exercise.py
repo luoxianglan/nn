@@ -85,6 +85,8 @@ def prepare_batch(Nums1, Nums2, results, maxlen):
         Nums2: shape(batch_size, maxlen)
         results: shape(batch_size, maxlen)
     '''
+    # 将每个数值转换为「个位→十位→百位...」的列表（如 123 → [3, 2, 1]）
+    # 调用 convertNum2Digits 函数：从数值中逐位提取个位，直至数值为0
     Nums1 = [convertNum2Digits(o) for o in Nums1]
     Nums2 = [convertNum2Digits(o) for o in Nums2]
     results = [convertNum2Digits(o) for o in results]
