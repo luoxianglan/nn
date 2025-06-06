@@ -82,7 +82,7 @@ model = linearModel(ndim=ndim)
 # In[26]:
 
 
-optimizer = optimizers.Adam(0.1)
+optimizer = optimizers.Adam(0.1)# 使用Adam优化器，学习率为0.1
 @tf.function
 def train_one_step(model, xs, ys):
     with tf.GradientTape() as tape:
