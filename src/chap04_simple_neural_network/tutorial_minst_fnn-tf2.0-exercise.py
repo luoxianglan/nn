@@ -132,4 +132,7 @@ loss, accuracy = test(model,
                       tf.constant(test_data[0], dtype = tf.float32),  # 将测试特征数据转换为TensorFlow常量张量，数据类型为float32
                       tf.constant(test_data[1], dtype = tf.int64))    # 将测试标签数据转换为TensorFlow常量张量，数据类型为int64
 
+# 打印测试集评估结果，使用numpy()方法将Tensor转换为numpy数组
+# loss.numpy(): 获取测试集上的平均损失值（标量）
+# accuracy.numpy(): 获取测试集上的准确率（标量，范围0-1）
 print('test loss', loss.numpy(), '; accuracy', accuracy.numpy())
