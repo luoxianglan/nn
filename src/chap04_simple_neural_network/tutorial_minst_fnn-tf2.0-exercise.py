@@ -65,7 +65,8 @@ class myModel:
         # 输出层（未归一化）
         logits = h @ self.W2 + self.b2         
         return logits
-        
+# 实例化自定义模型，myModel应为继承自tf.keras.Model或nn.Module的子类
+# 模型结构通常包含网络层定义和前向传播逻辑        
 model = myModel()
 
 # 使用Adam优化器，用于训练过程中更新模型参数
