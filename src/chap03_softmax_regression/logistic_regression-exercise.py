@@ -222,6 +222,9 @@ if __name__ == '__main__':
     def animate(i):
         xx = np.arange(10, step=0.1)# 生成x轴数据点，范围0-9.9，步长0.1
         a = animation_frames[i][0]  # 从帧数据中提取当前帧的参数，假设animation_frames是一个列表，每个元素包含[a, b, c, loss]四个值
+        # 从动画帧数据中提取第i帧的第二个元素
+        # animation_frames格式通常为[(t0, b0, c0), (t1, b1, c1), ...]
+       # b通常代表动画中的某个位置参数（如x坐标、角度等）
         b = animation_frames[i][1]
         c = animation_frames[i][2]
         yy = a/-b * xx + c/-b       # 计算直线方程 y = (-a/b)x + (-c/b)
