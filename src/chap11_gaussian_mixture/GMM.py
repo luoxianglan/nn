@@ -239,7 +239,11 @@ if __name__ == "__main__":
     plt.title("GMM Predicted Clusters") # 子图标题
 
     # 设置坐标轴标签
+    # 设置X轴标签为"Feature 1"，可通过fontsize参数调整字体大小
+    # 该标签通常表示数据的第一个特征维度
     plt.xlabel("Feature 1")
+    # 设置Y轴标签为"Feature 2"，可通过rotation参数控制标签旋转角度
+    # 该标签通常表示数据的第二个特征维度
     plt.ylabel("Feature 2")
     plt.grid(True, linestyle='--', alpha=0.7) # 添加网格线，线型为虚线，透明度为0.7
     plt.tight_layout()
