@@ -103,6 +103,9 @@ class Softmax:
         out = x_exp/(partition+self.epsilon)
 
         # 将计算结果存入内存字典，用于反向传播
+        # 缓存前向传播计算结果，用于后续反向传播时的梯度计算
+        # 将最终输出存储到内存字典，通常为激活函数处理后的结果
+        # 形状：out.shape = [batch_size, num_classes]
         self.mem['out'] = out
         self.mem['x_exp'] = x_exp
         return out
@@ -127,9 +130,8 @@ class Log:
     '''
     softmax over last dimention
     '''
-    def __init__(self):
-        self.epsilon = 1e-12
-        self.mem = {}
+    # 设置Y轴标签为"Feature 2"，可通过rotation参数控制标签旋转角度
+# 该标签通常表示数据的第二个特征维度
         
     def forward(self, x):
         '''
