@@ -76,10 +76,10 @@ def results_converter(res_lst):
 def prepare_batch(Nums1, Nums2, results, maxlen):
     '''准备一个batch的数据，将数值转换成反转的数位列表并且填充到固定长度
     Args:
-        Nums1: shape(batch_size,)
-        Nums2: shape(batch_size,)
-        results: shape(batch_size,)
-        maxlen:  type(int)
+        Nums1: shape(batch_size,)#第一组输入数值列表
+        Nums2: shape(batch_size,)#第二组输入数值列表
+        results: shape(batch_size,)#目标结果数值列表
+        maxlen:  type(int)#序列填充的最大长度
     Returns:
         Nums1: shape(batch_size, maxlen)
         Nums2: shape(batch_size, maxlen)
