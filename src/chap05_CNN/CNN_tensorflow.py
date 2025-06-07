@@ -167,7 +167,8 @@ cross_entropy = tf.reduce_mean(
     -tf.reduce_sum(ys * tf.log(prediction),reduction_indices=[1])
 )
 train_step = tf.train.AdamOptimizer(learning_rate).minimize(cross_entropy)
-
+# 创建TensorFlow会话，用于执行计算图
+# 会话负责分配GPU/CPU资源并执行操作
 with tf.Session() as sess:
     init = tf.global_variables_initializer()
     sess.run(init)
