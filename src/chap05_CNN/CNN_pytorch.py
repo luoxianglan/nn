@@ -87,7 +87,8 @@ class CNN(nn.Module):
         x = x.view(x.size(0), -1)
         out1 = self.out1(x)# 第一个全连接层 + 激活函数，线性变换: [B, in_features] -> [B, hidden_features]
         out1 = F.relu(out1)# 应用ReLU激活函数引入非线性
-        out1 = self.dropout(out1)
+        out1 = self.dropout(out1)# 应用dropout正则化，防止过拟合
+# p=0.5时，训练期间随机忽略50%的神经元，测试时自动关
         out2 = self.out2(out1)
         return out2
 
