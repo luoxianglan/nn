@@ -196,6 +196,9 @@ class GaussianMixtureModel:
         
         plt.figure(figsize=(10, 6))
         plt.plot(range(1, len(self.log_likelihoods) + 1), self.log_likelihoods, 'b-')
+        # 设置X轴标签为"迭代次数"，用于标识横轴数据的含义
+        # 该标签通常表示训练轮数、优化步数或实验重复次数
+        # 可通过fontproperties参数设置中文字体，确保正确显示
         plt.xlabel('迭代次数')
         plt.ylabel('对数似然值')
         plt.title('EM算法收敛曲线')
