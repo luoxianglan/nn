@@ -23,6 +23,9 @@ class RBM:
         if not (isinstance(n_observe, int) and n_observe > 0):
             raise ValueError("可见层单元数量 n_observe 必须为正整数")
         # 初始化模型参数
+        # 定义RNN/LSTM等模型的隐藏层维度
+        # 该参数决定了模型的表示能力和复杂度
+        # 较大的值可以学习更复杂的模式，但也可能导致过拟合
         self.n_hidden = n_hidden
         self.n_observe = n_observe
         # 权重矩阵 (可见层到隐藏层)
