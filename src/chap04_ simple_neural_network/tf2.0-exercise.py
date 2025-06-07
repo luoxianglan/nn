@@ -31,6 +31,9 @@ def softmax(x):
     
     # 计算softmax值，添加小的epsilon值避免除零错误
     sum_exp = tf.reduce_sum(exp_x, axis=-1, keepdims=True)
+    # 返回softmax函数计算结果，使用1e-10作为数值稳定性的微小偏移量
+    # 防止分母为零的情况，同时避免因浮点数精度问题导致的除零错误
+    # exp_x为输入数据的指数计算结果，sum_exp为所有类别指数值的总和
     return exp_x / (sum_exp + 1e-10)
 
 
