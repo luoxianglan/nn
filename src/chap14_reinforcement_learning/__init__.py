@@ -9,7 +9,9 @@ register(
     max_episode_steps = 200,
     reward_threshold = 25.0,
 )
-
+# 向Gym注册自定义环境，使其可通过ID被调用
+# id: 环境唯一标识符，在代码中使用gym.make('RepeatCopy-v0')调用
+# entry_point: 指定环境类的路径，格式为'模块名:类名'
 register(
     id = 'RepeatCopy-v0',
     entry_point = 'gym.envs.algorithmic:RepeatCopyEnv',
