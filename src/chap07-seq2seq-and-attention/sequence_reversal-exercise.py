@@ -143,6 +143,9 @@ class mySeq2SeqModel(keras.Model):
         x_embed = self.embed_layer(x)  # (B, E)
     
     # 加性注意力计算
+        # 计算注意力得分：通过非线性变换生成查询向量与编码器输出的匹配度
+       # self.dense_attn(enc_out): (B, T1, H) → (B, T1, H)
+       # tf.nn.tanh: 将得分值压缩到[-1, 1]区间
         score = tf.nn.tanh(self.dense_attn(enc_out))  # (B, T1, H)
         score = tf.reduce_sum(score * tf.expand_dims(state, 1), axis=-1)  # (B, T1)
         attn_weights = tf.nn.softmax(score, axis=-1)  # (B, T1)
