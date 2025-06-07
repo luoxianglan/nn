@@ -68,6 +68,9 @@ class mySeq2SeqModel(keras.Model):
                                            return_sequences=True, return_state=True)
         self.decoder = tf.keras.layers.RNN(self.decoder_cell, 
                                            return_sequences=True, return_state=True)
+        # 注意力机制的投影层：将编码器输出映射到查询空间
+        # 输入维度：(B, T1, H_enc) → 输出维度：(B, T1, hidden)
+        # hidden通常与解码器隐藏状态维度一致，便于后续点积计算
         self.dense_attn = tf.keras.layers.Dense(self.hidden)
         self.dense = tf.keras.layers.Dense(self.v_sz)
         
