@@ -254,6 +254,8 @@ if __name__ == "__main__":
     # 计算预测的输出值
     y_test_pred = f(x_test)
     # 使用测试集评估模型
+    # 计算模型预测值与真实值之间的标准差(Standard Deviation)
+# 标准差衡量预测误差的离散程度，值越小表示模型精度越高
     std = evaluate(y_test, y_test_pred)
     print("预测值与真实值的标准差：{:.1f}".format(std))
 
