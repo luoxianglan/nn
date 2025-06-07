@@ -160,7 +160,7 @@ def train_one_step(model, optimizer, x, y):
     grads = tape.gradient(loss, model.trainable_variables)
     # 使用优化器更新模型的可训练变量
     optimizer.apply_gradients(zip(grads, model.trainable_variables))
-    return loss, accuracy, model.W, model.b
+    return loss, accuracy, model.W, model.b# 返回模型评估结果和参数，适用于线性模型或逻辑回归
 
 
 if __name__ == '__main__':
