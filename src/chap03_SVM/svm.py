@@ -80,6 +80,10 @@ if __name__ == '__main__':
     x_train = data_train[:, :2]  # feature [x1, x2]
     t_train = data_train[:, 2]   # 真实标签
     t_train_pred = svm.predict(x_train)     # 预测标签
+    # 从测试数据中提取特征列，构建模型输入矩阵
+   # data_test格式假设为 [样本数, 特征列+目标列]
+   # 例如：[:, :2] 表示取所有行的前两列作为特征
+  # 结果形状：x_test.shape = [样本数, 2]
     x_test = data_test[:, :2]
     t_test = data_test[:, 2]
     t_test_pred = svm.predict(x_test)
