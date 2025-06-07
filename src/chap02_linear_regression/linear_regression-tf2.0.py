@@ -113,6 +113,9 @@ class linearModel(Model):
     (xs, ys), (o_x, o_y) = load_data("train.txt")        
     ndim = xs.shape[1]
 
+    # 实例化线性回归模型，适用于预测连续值目标变量
+# ndim参数指定输入特征的维度，需与训练数据匹配
+# 模型结构：y = W·x + b，其中W为权重矩阵，b为偏置向量
     model = linearModel(ndim=ndim)
 
 
