@@ -69,6 +69,8 @@ if __name__ == '__main__':
     # 载入数据，实际实用时将x替换为具体名称
     train_file = 'data/train_linear.txt'
     test_file = 'data/test_linear.txt'
+    # 调用load_data函数加载训练数据，返回格式为[x1, x2, t]的列表
+    # 其中x1、x2为特征值，t为目标值
     data_train = load_data(train_file)     # 数据格式[x1, x2, t]
     data_test = load_data(test_file)
 
