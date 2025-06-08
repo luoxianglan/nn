@@ -9,7 +9,8 @@ register(
     max_episode_steps = 200,
     reward_threshold = 25.0,
 )
-
+# 向 Gym 注册一个名为 'RepeatCopy-v0' 的环境
+# 注册后可以通过 gym.make('RepeatCopy-v0') 创建该环境实例
 register(
     id = 'RepeatCopy-v0',
     entry_point = 'gym.envs.algorithmic:RepeatCopyEnv',
