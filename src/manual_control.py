@@ -170,7 +170,9 @@ def get_actor_display_name(actor, truncate=250):                                
 
 
 def get_actor_blueprints(world, filter, generation):
+    # 从世界对象中获取蓝图库，并根据传入的过滤器参数筛选蓝图
     bps = world.get_blueprint_library().filter(filter)
+     # 如果 generation 参数为 "all"，则直接返回所有筛选后的蓝图
 
     if generation.lower() == "all":
         return bps
