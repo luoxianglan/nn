@@ -63,6 +63,8 @@ for i_episode in range(max_epochs):
         # reward: 执行动作后获得的奖励（如胜利+1，失败-1）
         # done: 游戏是否结束
         # info: 额外信息（如获胜方、结束原因）
+        # 执行智能体的动作并推进环境模拟
+        # 返回环境反馈的四个核心元素：
         observation, reward, done, info = env.step(action)
 
         # 如果对局结束
