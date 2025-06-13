@@ -70,7 +70,7 @@ register(
     id='CartPole-v1',         # 高难度版本（延长测试时间）
     entry_point='gym.envs.classic_control:CartPoleEnv',
     max_episode_steps=500,    # 需平衡500步
-    reward_threshold=475.0,
+    reward_threshold=475.0,#强化学习环境配置
 )
 
 # 2. 山车任务：利用动量爬坡（状态空间连续，动作空间离散）
